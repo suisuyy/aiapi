@@ -5,6 +5,8 @@ import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
 
+let port=process.env.PORT || 3000
+
 
 const app = express();
 //const upload = multer({ dest: 'uploads/' });
@@ -65,6 +67,6 @@ app.post('/transcribe', upload.single('file'), async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(port, () => {
+  console.log('Server is running on port '+port);
 });
